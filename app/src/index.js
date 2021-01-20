@@ -9,13 +9,16 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 //Need to import thunk from redux-thunk
 import thunk from 'redux-thunk';
+//Need to import reducer
+import { rootReducer } from './store/reducers/reducer'
 
-//Crate store
-const store = createStore(applyMiddleware (thunk));
+//crateStore
+const store = createStore( rootReducer, applyMiddleware (thunk));
   console.log('This is the state', store.getState());
 
-ReactDOM.render(
-  <Provider>
+//Wrap App with Provider store={store}
+  ReactDOM.render(
+  <Provider store={store}>
   <App />
   </Provider>,
   document.getElementById('root')
