@@ -10,10 +10,10 @@ import { createStore, applyMiddleware } from 'redux';
 //Need to import thunk from redux-thunk
 import thunk from 'redux-thunk';
 //Need to import reducer
-import { rootReducer } from './store/reducers/reducer'
+import { reducer } from './store/reducers'
 
 //crateStore
-const store = createStore( rootReducer, applyMiddleware (thunk));
+const store = createStore( reducer, applyMiddleware (thunk));
   console.log('This is the state', store.getState());
 
 //Wrap App with Provider store={store}

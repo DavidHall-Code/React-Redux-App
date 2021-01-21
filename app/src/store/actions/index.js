@@ -14,10 +14,13 @@ export const fetchCases = () => {
             .get('https://api.covid19api.com/summary')
             .then((res) => {
                 console.log(res)
-                dispatch({type: FETCH_CASES_SUCCESS, payload: res.data.Countries[176]})
+                dispatch({type: FETCH_CASES_SUCCESS, payload: res.data.Countries[179]})
             })
             .catch((err) => {
                 console.log(err)
             })
     }
 }
+
+
+// Math.floor(Math.random() * Math.floor(max)) 

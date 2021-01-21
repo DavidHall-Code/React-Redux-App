@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 //Need to import connect
 import { connect } from 'react-redux';
 //Need to import fetchCases from actions
-import { fetchCases } from '../store/actions/index';
+import { fetchCases } from '../store/actions';
 //Use moment for current date
 import moment from 'moment';
 
@@ -37,9 +37,9 @@ const Cases = props => {
 const mapStateToProps = state => {
     console.log(state)
     return {
-      isFetching: state.reducer.isFetching,
-      cases: state.reducer.cases,
-      error: state.reducer.error
+      isFetching: state.isFetching,
+      cases: state.cases,
+      error: state.error
     }
   }
   
